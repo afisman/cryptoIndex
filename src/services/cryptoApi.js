@@ -1,8 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 
-
-
 export const cryptoApi = createApi({
     reducerPath: 'cryptoApi',
     baseQuery: fetchBaseQuery({
@@ -16,7 +14,7 @@ export const cryptoApi = createApi({
     }),
     endpoints: (builder) => ({
         getCryptos: builder.query({
-            query: () => ({ url: `coins` })
+            query: (count) => ({ url: `coins?limit=${count}` })
         })
     })
 })
